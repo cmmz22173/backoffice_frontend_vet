@@ -13,6 +13,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ListSidebar from './ListSidebar';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     top: false,
@@ -57,6 +60,12 @@ export default function TemporaryDrawer() {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
           >
+            <Box sx={{ display:"flex",justifyContent:"center",m:4}}>
+              <AccountCircleIcon sx={{fontSize:120,color:"grey"}}/>
+
+              
+            </Box>
+            
             {list(anchor)}
           </Drawer>
         </React.Fragment>

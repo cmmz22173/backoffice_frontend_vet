@@ -10,12 +10,12 @@ import Typography from '@mui/material/Typography';
 import { DataGrid} from '@mui/x-data-grid';
 import SearchIcon from '@mui/icons-material/Search';
 const columns = [
-        { field: 'id', headerName: 'ID', width: 100, headerClassName: 'theme--header', },
-        { field: 'nombre', headerName: 'Nombre', width: 200,headerClassName: 'theme--header',},
-        { field: 'tipo', headerName: 'Tipo', width: 150 ,headerClassName: 'theme--header',},
-        { field: 'raza', headerName: 'Raza', width: 150 ,headerClassName: 'theme--header',},
-        { field: 'edad', headerName: 'Edad', width: 100 ,headerClassName: 'theme--header',},
-        { field: 'discapacidades', headerName: 'Discapacidades', width: 450 ,headerClassName: 'theme--header',},
+        { field: 'id', headerName: 'ID', headerClassName: 'theme--header' },
+        { field: 'nombre', headerName: 'Nombre',headerClassName: 'theme--header',},
+        { field: 'tipo', headerName: 'Tipo' ,headerClassName: 'theme--header',},
+        { field: 'raza', headerName: 'Raza',headerClassName: 'theme--header',},
+        { field: 'edad', headerName: 'Edad' ,headerClassName: 'theme--header',},
+        { field: 'discapacidades', headerName: 'Discapacidades', width: 500 ,headerClassName: 'theme--header',},
         
       ];
     

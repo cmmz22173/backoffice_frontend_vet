@@ -20,6 +20,13 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import StoreIcon from '@mui/icons-material/Store';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import EventIcon from '@mui/icons-material/Event';
+import BallotIcon from '@mui/icons-material/Ballot';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
+
 
 export default function ListSidebar(){
 
@@ -40,6 +47,13 @@ export default function ListSidebar(){
     const handleClickClientes = () => {
       setOpenClientes(!openClientes);
     };
+
+    const [openCitas, setOpenCitas] = React.useState(false);
+
+    const handleClickCitas = () => {
+      setOpenCitas(!openCitas);
+    };
+
 
 
     return(
@@ -62,6 +76,14 @@ export default function ListSidebar(){
                                 <ListItemText primary="Nuevo" sx={{color:"black"}}/>
                             </ListItemButton>
                         </Link>
+                        <Link to={"/editar/empleado"} style={{ textDecoration: 'none' }}>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemIcon>
+                                    <ManageAccountsIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Editar" sx={{color:"black"}}/>
+                            </ListItemButton>
+                        </Link>
                     </List>
                 </Collapse>
                 <ListItemButton onClick={handleClickServicios}>
@@ -79,6 +101,14 @@ export default function ListSidebar(){
                                     <AddBusinessIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="Nuevo" sx={{color:"black"}}/>
+                            </ListItemButton>
+                        </Link>
+                        <Link to={"/editar/servicio"} style={{ textDecoration: 'none' }}>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemIcon>
+                                    <DriveFileRenameOutlineIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Editar" sx={{color:"black"}}/>
                             </ListItemButton>
                         </Link>
                     </List>
@@ -103,11 +133,39 @@ export default function ListSidebar(){
                         <Link to={"/buscar/cliente"} style={{ textDecoration: 'none' }}>
                             <ListItemButton sx={{ pl: 4 }}>
                                 <ListItemIcon>
-                                    <PersonAddAlt1Icon  />
+                                    <PersonSearchIcon  />
                                 </ListItemIcon>
                                 <ListItemText primary="Buscar" sx={{color:"black"}}/>
                             </ListItemButton>
                         </Link>
+                    </List>
+                </Collapse>
+                <ListItemButton onClick={handleClickCitas}>
+                    <ListItemIcon>
+                        <EventNoteIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="Citas" />
+                    {openCitas ? <ExpandLess /> : <ExpandMore />}
+                </ListItemButton>
+                <Collapse in={openCitas} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                    <Link to={"/registros/citas"} style={{ textDecoration: 'none' }}>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemIcon>
+                                    <BallotIcon  />
+                                </ListItemIcon>
+                                <ListItemText primary="Registros" sx={{color:"black"}}/>
+                            </ListItemButton>
+                        </Link>
+                        <Link to={"/crear/cita"} style={{ textDecoration: 'none' }}>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemIcon>
+                                    <EventIcon  />
+                                </ListItemIcon>
+                                <ListItemText primary="Crear" sx={{color:"black"}}/>
+                            </ListItemButton>
+                        </Link>
+                      
                     </List>
                 </Collapse>
 
