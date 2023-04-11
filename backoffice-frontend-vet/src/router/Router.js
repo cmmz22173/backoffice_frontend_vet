@@ -12,13 +12,15 @@ import CrearCita from '../pages/CrearCita';
 import RegistroCitas from '../pages/Citas';
 import EditarEmpleado from '../pages/EditarEmpleado';
 import EditarSerivicio from '../pages/EditarServicio';
+import Login from '../pages/Login';
 
 function Rutas() {
   return (
     <Router>
         <Routes> 
             <Route path="/" element={ <Home/>}/>  
-            
+            <Route path="/login" element={ <Login/>}/>
+
             <Route path="/crear/empleado" element={ <NuevoEmpleado/>}/>
             <Route path="/crear/cita" element={ <CrearCita/>}/>   
             <Route path="/crear/servicio" element={ <NuevoServicio/>}/>  
